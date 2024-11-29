@@ -1,0 +1,132 @@
+{% assign featuredCollectionList = collection.metafields.seo.collection_carousel.value %}
+
+{%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+  
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+  {% for data in featuredCollectionList %}
+    {% for catItem in data.categories %}
+        <section class="c-catCarousel color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
+            <div class="o-pageWidth">
+            <collections-carousel>
+                <h2 class="c-catCarousel__heading c-h2">{{ catItem.section_title }}</h2>
+                <div class="c-catCarousel__slider-wrapper">
+                <section
+                    class="c-catCarousel__sliderContainer swiper-container"
+                    role="region"
+                    aria-label="{{ section.settings.heading }} Carousel"
+                >
+                    <div class="c-catCarousel__slider swiper" data-collections-carousel-slider>
+                    <div class="c-catCarousel__wrapper swiper-wrapper">
+                        {%- for catTiles in catItem.feat_cats -%}
+                            {% assign collection_url = catTiles.cat_url %}
+                            {% assign collection_img = catTiles.cat_img %}
+                            {% assign collection_text = catTiles.cat_text %}
+                            <div
+                                class="c-catCarousel__collection swiper-slide"
+                                role="group"
+                                aria-label="collection slide {{ forloop.index }} of {{ forloop.length }}"
+                            >
+                                <div class="c-catCard">
+                                <div class="c-catCard__media">
+                                    {%- if collection_img -%}
+                                        <img src="{{ collection_img }}" alt="{{ collection_text }}" loading="lazy">
+                                    {%- else -%}
+                                    {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+                                    {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
+                                    {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+                                    {%- endif -%}
+                                </div>
+                                <div class="c-catCard__content">
+                                    {% if collection_text %}<div class="h2 c-catCard__heading c-h2">{{ collection_text }}</div>{% endif %}
+                                    {% if collection_url %}
+                                    <a
+                                    href="{{ collection_url }}"
+                                    class="c-catCard__link full-unstyled-link c-a1"
+                                    data-collection-link
+                                    >
+                                    Shop Now
+                                    </a>
+                                    {% endif %}
+                                </div>
+                                </div>
+                            </div>
+                        {%- endfor -%}
+                    </div>
+                    {% render 'swiper-controls', controls: true %}
+                    </div>
+                </section>
+                </div>
+            </collections-carousel>
+            </div>
+        </section>
+    {% endfor %}
+{% endfor %}
+  
+  {% schema %}
+  {
+    "name": "SEO: Collections Carousel",
+    "class": "collections-carousel-section",
+    "settings": [
+        {
+            "type": "paragraph",
+            "content": "Outputs Collection Metafield: 'SEO: Collection Carousel'"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 48
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 48
+        },
+        {
+            "type": "range",
+            "id": "padding_top_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding Top Mobile",
+            "default": 40
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding Bottom Mobile",
+            "default": 40
+        }
+    ],
+    "presets": [
+      {
+        "name": "SEO: Collections Carousel"
+      }
+    ]
+  }
+  {% endschema %}
+  

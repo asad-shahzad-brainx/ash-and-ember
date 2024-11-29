@@ -1,0 +1,348 @@
+{% assign sidebar_enabled = article.metafields.seo.sidebar_enabled.value %}
+{% assign sidebar_prods = article.metafields.seo.sidebar_products.value %}
+{% assign article_best_sellers = article.metafields.seo.best_sellers.value %}
+{% assign related_articles = article.metafields.seo.related_articles.value %}
+
+
+{%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    {%- unless sidebar_enabled -%}
+        #obx-article-details{ max-width: 100%; }
+    {%- endunless-%}
+
+    .jump-target::before{
+      content: "";
+      display: block;
+      height: 100px; 
+      margin: -100px 0 0;
+    }
+
+    section.c-customerSupport {
+      background-color: #f2f2f2 !important;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+
+  <section class=" section-{{ section.id }}-padding">
+    <div class="o-pageWidth">
+
+      <div id="obx-article-container">
+
+         {%- if sidebar_enabled %}
+          <div id="obx-article-sidebar">
+           <div class="sidebar-inner">
+                {%- if section.settings.sidebar_cats != blank %}
+                    <div class="sb-heading">Categories</div>
+                {%- endif -%}
+                {%- if section.settings.sidebar_cats != blank %}
+                  <div class="sb-block sb-categories">
+                      {{ section.settings.sidebar_cats }}
+                  </div>
+                {%- endif -%}
+
+                {%- if sidebar_prods != blank %}
+                    {% for data in sidebar_prods %}
+                        {% for block in data.sidebar_products %}
+                            <div class="sb-block sb-products">
+                                <div class="sb-heading">{{ block.title }}</div>
+                                <ul>
+                                    {% for prodItem in block.products %}
+                                        {% assign is_true_product = false %}
+                                        {% if all_products[prodItem.prod_handle].title != '' %}
+                                            {% assign is_true_product = true %}
+                                        {% endif %}
+                                        {% if is_true_product %}
+                                            <li class="obx-prodItem">{% render 'obx-card-product', 
+                                                    product_handle: prodItem.prod_handle,
+                                                    custom_img: prodItem.custom_image,
+                                                    custom_title: prodItem.custom_title
+                                                %}</li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                {%- endif -%}
+              </div>
+            </div>
+         {%- endif -%}
+
+          <div id="obx-article-details">
+
+            {% if section.settings.show_breadcrumbs %}
+                <div class="c-articleDetails__breadcrumbs">
+                  {% render 'breadcrumbs', list: section.settings.menu, current: blog.handle %}
+                </div>
+            {% endif %}
+
+            {% for block in section.blocks %}
+
+              {% if block.type == 'text' %}
+                <div id="obx-article-header">
+                    <h1>{{ article.title }}</h1>
+                    {% if article.excerpt != blank %}
+                        <div class="excerpt">{{ article.excerpt }}</div>
+                    {% endif %}
+                    <div class="article-meta">
+                        {% if block.settings.show_date %}
+                            <p class="article-meta-title date">{{ article.published_at | date: '%B %d, %Y' }}</p>
+                        {% endif %}
+                        {% if block.settings.show_social %}
+                        <div class="article-share">
+                            <div class="article-meta-title">Share:</div>
+                            <ul class="share-links">
+                                <li><a target="_blank" rel="noopener nofollow" href="https://www.facebook.com/sharer/sharer.php?u={{ canonical_url }}"><div class="obx-icon fb-icon"></div></a></li>
+                                <li><a target="_blank" rel="noopener nofollow" href="https://www.pinterest.com/pin/create/button/?url={{ canonical_url }}&media={{ article.img | img_url: 'master' }}&description={{ article.excerpt | strip_html | replace: ' ', '%20' }}"><div class="obx-icon pin-icon"></div></a></li>
+                                <li><a target="_blank" rel="noopener nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url={{ canonical_url }}&summary={{ article.excerpt | strip_html | replace: ' ', '%20' }}"><div class="obx-icon linkd-icon"></div></a></li>
+                                <li><a target="_blank" rel="noopener nofollow" href="https://twitter.com/intent/tweet?url={{ canonical_url }}&text={{ article.title | strip_html | replace: ' ', '%20' }}"><div class="obx-icon tweet-icon"></div></a></li>
+                                {% comment %}<li><a target="_blank" rel="noopener nofollow" href=""><div class="obx-icon share-icon"></div></a></li>{% endcomment %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>  
+                </div>
+              {% endif %}
+
+              {% if block.type == 'content' %}
+                {%- if article.content != blank %}
+                  {% if article.content contains '<!-- split -->'%}
+                      <div class="article--top-half">
+                          {{ article.content | split: '<!-- split -->' | first }}
+                      </div>
+                  {% else %}
+                      <div class="article--full">
+                          {{ article.content }}
+                      </div>
+                  {% endif %}
+                {%- endif -%}
+
+                {%- if article_best_sellers != blank %}
+                  {% for data in article_best_sellers %}
+                    {% for block in data.seo_best_selling_products %}
+                        <section id="article--best-sellers">
+                            <h2>{{ block.title }}</h2>
+                            <div class="product--grid">
+                                {% for prodItem in block.products %}
+                                    {% assign is_true_product = false %}
+                                    {% if all_products[prodItem.prod_handle].title != '' %}
+                                        {% assign is_true_product = true %}
+                                    {% endif %}
+                                    {% if is_true_product %}
+                                        <div class="swiper-slide obx-prodItem"> 
+                                            {% render 'obx-card-product', 
+                                                    product_handle: prodItem.prod_handle,
+                                                    custom_img: prodItem.custom_image,
+                                                    custom_title: prodItem.custom_title
+                                                %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </section>
+
+                      {% endfor %}
+                  {% endfor %}
+                {% endif %}
+
+
+                {%- if article.content != blank %}
+                  {% if article.content contains '<!-- split -->'%}
+                      <div class="article--bottom-half">
+                          {{ article.content | split: '<!-- split -->' | last }}
+                      </div>
+                  {% else %}
+                  {% endif %}
+                {%- endif -%}
+
+            {% endif %}
+
+              {% if block.type == 'footer' %}
+                    <div id="obx-article-footer">
+                        {% if block.settings.show_back %}
+                        <div class="return-link">
+                            <a href="{{ blog.url }}">All Articles</a>
+                        </div>
+                        {% endif %}
+                        {% if block.settings.show_social %}
+                            <div class="article-share">
+                                <div class="article-meta-title">Share:</div>
+                                <ul class="share-links">
+                                    <li><a target="_blank" rel="noopener nofollow" href="https://www.facebook.com/sharer/sharer.php?u={{ canonical_url }}"><div class="obx-icon fb-icon"></div></a></li>
+                                    <li><a target="_blank" rel="noopener nofollow" href="https://www.pinterest.com/pin/create/button/?url={{ canonical_url }}&media={{ article.img | img_url: 'master' }}&description={{ article.excerpt | strip_html | replace: ' ', '%20' }}"><div class="obx-icon pin-icon"></div></a></li>
+                                    <li><a target="_blank" rel="noopener nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url={{ canonical_url }}&summary={{ article.excerpt | strip_html | replace: ' ', '%20' }}"><div class="obx-icon linkd-icon"></div></a></li>
+                                    <li><a target="_blank" rel="noopener nofollow" href="https://twitter.com/intent/tweet?url={{ canonical_url }}&text={{ article.title | strip_html | replace: ' ', '%20' }}"><div class="obx-icon tweet-icon"></div></a></li>
+                                    {% comment %}<li><a target="_blank" rel="noopener nofollow" href=""><div class="obx-icon share-icon"></div></a></li>{% endcomment %}
+                                </ul>
+                            </div> 
+                        {% endif %}
+                    </div>
+              {% endif %}
+            {% endfor %}
+
+            {% for data in related_articles %}
+                {% for articleItem in data.seo_cw%}
+
+                    <div id="obx-content-wheel" class="obx-article-template">
+                        <h2>{{ articleItem.title }}</h2>
+                        <div class="related-articles">
+                            {%- for article in articleItem.articles -%}
+                                <div class="article">
+                                    <a href="{{ article.post_url }}">
+                                        <span class="img-container"><img src="{{ article.post_img }}" alt="{{ article.post_img_alt }}"></span>
+                                        <span class="article-inner">
+                                            <span class="article-title">{{ article.post_title }}</span>
+                                            <span class="article-excerpt">{{ article.post_excerpt}}</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            {%- endfor -%}
+                        </div>
+                    </div>
+
+                {% endfor %}
+            {% endfor %}
+
+
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+    var ytVid = document.querySelectorAll('.youtube');
+    for (var i = 0; i < ytVid.length; i++) {
+        var thumbnail = "https://img.youtube.com/vi/"+ ytVid[i].dataset.embed +"/maxresdefault.jpg";
+        ytVid[i].style.cssText = "max-width: 600px;";
+        ytVid[i].innerHTML = '<div class="play"></div>' +
+            '<meta itemprop="embedURL" content="https://www.youtube.com/embed/' +  ytVid[i].dataset.embed +'" />' +
+            '<img style="cursor: pointer;" width="600" height="337" src="' + thumbnail + '" />';
+        ytVid[i].addEventListener( "click", function() {
+            this.innerHTML = '<iframe width="600" height="337" frameBorder="0" ' +
+                'allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"' +
+                'src="https://www.youtube.com/embed/' + this.dataset.embed + '?enablejsapi=1&rel=0&showinfo=0&autoplay=1"' +
+                ' allowFullScreen="allowfullscreen"></iframe>';
+        } );
+    }
+})
+</script>
+
+  {% schema %}
+  {
+    "name": "Blog Detail",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_breadcrumbs",
+        "default": true,
+        "label": "Show Breadcrumbs"
+      },
+      {
+        "type": "richtext",
+        "id": "sidebar_cats",
+        "label": "Sidebar Categories"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 35
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 35
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "px",
+        "label": "Padding Top Mobile",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "px",
+        "label": "Padding Bottom Mobile",
+        "default": 40
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Title",
+        "type": "text",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "checkbox",
+            "label": "Show Date",
+            "id": "show_date",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "label": "Show Social Links",
+            "id": "show_social",
+            "default": true
+          }
+        ]
+      },
+      {
+        "name": "Article Content",
+        "type": "content",
+        "limit": 1
+      },
+      {
+        "name": "Footer",
+        "type": "footer",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "checkbox",
+            "label": "Show Back to Articles",
+            "id": "show_back",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "label": "Show Social Links",
+            "id": "show_social",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Blog Detail"
+      }
+    ]
+  }
+  {% endschema %}

@@ -1,0 +1,76 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "19002a55-891a-4bf2-abaa-d29b0a3a85e6": {
+      "type": "top-announcement-bar",
+      "blocks": {
+        "sections--21340513403157__19002a55-891a-4bf2-abaa-d29b0a3a85e6-announcement-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free Shipping On Orders Over $250",
+            "icon": "shopify://shop_images/ash_and_ember_-_free_shipping_over_250_a18acafc-b636-4e7a-a0b9-a98511ee7a34.png",
+            "link": "shopify://pages/shipping-policy",
+            "prop": "Expedited shipping options available for a fee"
+          }
+        },
+        "a9c97c88-dff8-486b-8dcb-4afa39f57402": {
+          "type": "announcement",
+          "settings": {
+            "text": "Call our Experts Monday-Saturday",
+            "icon": "shopify://shop_images/ash_and_ember_-_orders_ship_next_day_0001da8c-7eac-4e4f-9531-5de2851aad21.png",
+            "link": "shopify://pages/strategic-accounts",
+            "prop": "Call 888-794-1455 x4 Mon-Fri 7am-6pm CT & Saturday 8am-3pm CT"
+          }
+        },
+        "39551122-3014-4ba9-8ca1-94da94468bd6": {
+          "type": "announcement",
+          "settings": {
+            "text": "Buy Now, Pay Later",
+            "icon": "shopify://shop_images/ash_and_ember_-_financing_available_64e3f80b-ee8c-4016-afca-e2d2d4937549.png",
+            "link": "shopify://pages/financing",
+            "prop": "Splitpay or financing with 0% APR* available"
+          }
+        }
+      },
+      "block_order": [
+        "sections--21340513403157__19002a55-891a-4bf2-abaa-d29b0a3a85e6-announcement-1",
+        "a9c97c88-dff8-486b-8dcb-4afa39f57402",
+        "39551122-3014-4ba9-8ca1-94da94468bd6"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "show_line_separator": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu",
+        "color_scheme": "accent-1",
+        "menu_color_scheme": "background-1"
+      }
+    },
+    "promo-bar": {
+      "type": "promo-bar",
+      "settings": {
+        "bg_color": "#500f01",
+        "text_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "19002a55-891a-4bf2-abaa-d29b0a3a85e6",
+    "header",
+    "promo-bar"
+  ]
+}
