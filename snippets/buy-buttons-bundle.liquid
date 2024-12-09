@@ -68,7 +68,6 @@
             novalidate: 'novalidate',
             data-type: 'add-to-cart-form'
           -%}
-
             {%- liquid
               if is_variant
                 assign component_references = variant.metafields.custom.component_reference.value
@@ -136,6 +135,7 @@
                 endif
               endfor
             -%}
+
             <input
               type="hidden"
               name="id"
@@ -151,13 +151,14 @@
               class="warranty-variant-id"
               data-warranty-id
             >
+
             <input
             id="backorder"
             type="hidden"
             {% if backorderDate != '' and isBackOrdered != false %}
               {%  assign formatted_date = backorderDate | date: '%m/%d/%Y' %}
                 name="properties[Backorder]"
-                value="{{ 'products.product.back_order_label' | t: date: formatted_date }}"
+                value="{{ 'products.product.back_order_label' | t: date: backorderDate }}"
             {% endif %}
               >
 
@@ -172,7 +173,7 @@
               {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
             {%- endif -%}
 
-            {% comment %} {%- liquid
+            {%- liquid
               assign check_against_inventory = true
               if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
                 assign check_against_inventory = false
@@ -180,8 +181,7 @@
               if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
                 assign quantity_rule_soldout = true
               endif
-            -%} {% endcomment %}
-
+            -%}
             <div
               class="product-form__buttons"
               id="{% if stickyAtc and stickyAtcID == "desktop" %}c-productFormButtons-stickydesktop-{{ section_id }}{% elsif stickyAtcID == "mobile"  %}c-productFormButtons-stickymobile-{{ section_id }}{% else %}c-productFormButtons-{{ section_id }}{% endif %}"
@@ -288,8 +288,6 @@
           </pickup-availability-preview>
         </template>
       </pickup-availability>
-
-
     {%- endif -%}
   {% endif %}
   <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>

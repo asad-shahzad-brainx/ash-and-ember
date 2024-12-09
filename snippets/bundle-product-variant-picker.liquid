@@ -108,19 +108,19 @@
                       </strong>
                     </div>
                   </legend>
-                  {% for depth in unique_depths %}
-                    {% assign depthValue = depth | remove: '"' %}
-                    <button
-                      class="c-radioInputLabel c-radioInputLabel--dimension{% if compareDepths contains depthValue %} c-radioInputLabel--dimension-selected{% endif %} c-b2"
-                      data-depth="{{ depthValue }}"
-                      {% if compareDepths contains depthValue %}
-                        data-current-depth
-                      {% endif %}
-                    >
-                      {{ depth }}
-                    </button>
-                  {% endfor %}
                 </div>
+                {% for depth in unique_depths %}
+                  {% assign depthValue = depth | remove: '"' %}
+                  <button
+                    class="c-radioInputLabel c-radioInputLabel--dimension{% if compareDepths contains depthValue %} c-radioInputLabel--dimension-selected{% endif %} c-b2"
+                    data-depth="{{ depthValue }}"
+                    {% if compareDepths contains depthValue %}
+                      data-current-depth
+                    {% endif %}
+                  >
+                    {{ depth }}
+                  </button>
+                {% endfor %}
               </product-dimensions>
             {% endif %}
           {% endif %}

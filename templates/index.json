@@ -1,32 +1,23 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "0a0237a9-d9d8-4cd3-95e4-15fecea3d253": {
       "type": "hero-banner",
       "settings": {
-        "img": "shopify://shop_images/ASH_BF_Starts_Now_-_desktop.webp",
-        "img_mobile": "shopify://shop_images/ASH_BF_Starts_Now_-_mobile.webp",
+        "img": "shopify:\/\/shop_images\/24-ASH-0078_Warehouse_Sale_-_Desktop_1.webp",
+        "img_mobile": "shopify:\/\/shop_images\/24-ASH-0078_Warehouse_Sale_-_Mobile_1.webp",
         "image_overlay_opacity": 0,
         "color_scheme": "",
-        "subheading": "",
-        "heading": "",
+        "subheading": "Up To 50% Off",
+        "heading": "Warehouse Sale",
         "heading_tag": "1",
         "use_aria_headings": true,
-        "desc": "",
+        "desc": "Unbeatable deals on outdoor fire pits, furniture, and grills. Shop before they’re gone!",
         "allignment_desktop": "u-middleCenterDesktop",
         "allignment_mobile": "u-middleCenter",
         "text_color": "#ffffff",
         "btn_label": "Shop Now",
-        "btn_link": "shopify://collections/black-friday-deals",
-        "button_color_scheme": "none"
+        "btn_link": "shopify:\/\/collections\/weekly-deals",
+        "button_color_scheme": "c-btnPrimary"
       }
     },
     "6b312e62-79e2-4542-9232-b733004eeaf3": {
@@ -36,55 +27,55 @@
           "type": "featured_collection",
           "settings": {
             "collection": "grade-a-teak-outdoor-furniture",
-            "collection_img": "shopify://shop_images/category-grade-a-teak.webp",
+            "collection_img": "shopify:\/\/shop_images\/category-grade-a-teak.webp",
             "collection_heading": "Grade A Teak",
             "heading_tag": "h2",
             "heading_style": "h2",
-            "collection_cta": "UP TO 20% OFF"
+            "collection_cta": "Shop Now"
           }
         },
         "template--21321490891029__6b312e62-79e2-4542-9232-b733004eeaf3-featured_collection-1": {
           "type": "featured_collection",
           "settings": {
             "collection": "outdoor-furniture",
-            "collection_img": "shopify://shop_images/category-teak-furniture_05f8239f-7741-444d-8352-3a82a50b0ee3.webp",
+            "collection_img": "shopify:\/\/shop_images\/category-teak-furniture_05f8239f-7741-444d-8352-3a82a50b0ee3.webp",
             "collection_heading": "Furniture",
             "heading_tag": "h2",
             "heading_style": "h2",
-            "collection_cta": "UP TO 50% OFF"
+            "collection_cta": "Shop Now"
           }
         },
         "template--21321490891029__6b312e62-79e2-4542-9232-b733004eeaf3-featured_collection-2": {
           "type": "featured_collection",
           "settings": {
             "collection": "outdoor-fire-pits-more",
-            "collection_img": "shopify://shop_images/category-fire-pits_f8e9fdef-8a95-4665-b2c9-2aaab230fc3c.webp",
+            "collection_img": "shopify:\/\/shop_images\/category-fire-pits_f8e9fdef-8a95-4665-b2c9-2aaab230fc3c.webp",
             "collection_heading": "Fire Pits",
             "heading_tag": "h2",
             "heading_style": "h2",
-            "collection_cta": "UP TO 50% OFF"
+            "collection_cta": "Shop Now"
           }
         },
         "template--21321490891029__6b312e62-79e2-4542-9232-b733004eeaf3-featured_collection-3": {
           "type": "featured_collection",
           "settings": {
             "collection": "grills",
-            "collection_img": "shopify://shop_images/category-grills_675dd367-b25e-4aea-bc9a-5e3199431fa5.webp",
+            "collection_img": "shopify:\/\/shop_images\/category-grills_675dd367-b25e-4aea-bc9a-5e3199431fa5.webp",
             "collection_heading": "Grills",
             "heading_tag": "h2",
             "heading_style": "h2",
-            "collection_cta": "UP TO 50% OFF"
+            "collection_cta": "Shop Now"
           }
         },
         "template--21321490891029__6b312e62-79e2-4542-9232-b733004eeaf3-featured_collection-4": {
           "type": "featured_collection",
           "settings": {
             "collection": "rotisseries",
-            "collection_img": "shopify://shop_images/category-rotisseries_a321b568-bb0b-4ccf-abf0-b3ee5c4ac34c.webp",
+            "collection_img": "shopify:\/\/shop_images\/category-rotisseries_a321b568-bb0b-4ccf-abf0-b3ee5c4ac34c.webp",
             "collection_heading": "Rotisseries",
             "heading_tag": "h2",
             "heading_style": "h2",
-            "collection_cta": "UP TO 20% OFF"
+            "collection_cta": "Shop Now"
           }
         }
       },
@@ -109,8 +100,8 @@
       "type": "hero-banner",
       "disabled": true,
       "settings": {
-        "img": "shopify://shop_images/ASH_BF_Doorbuster2_29HEMIPIT_smallfeature_-_Desktop_2ca5e82e-1de1-471b-96d0-aa4fa64c52d9.webp",
-        "img_mobile": "shopify://shop_images/ASH_BF_Doorbuster2_29HEMIPIT_-_Mobile.webp",
+        "img": "shopify:\/\/shop_images\/ASH_CM_All_doorbusters_smallfeature2-_Desktop.webp",
+        "img_mobile": "shopify:\/\/shop_images\/ASH_CM_All_doorbusters_smallfeature2_-_Mobile.webp",
         "image_overlay_opacity": 0,
         "color_scheme": "",
         "subheading": "",
@@ -122,7 +113,7 @@
         "allignment_mobile": "u-middleCenter",
         "text_color": "",
         "btn_label": "Shop Deal",
-        "btn_link": "https://ashandemberoutdoors.com/products/29-in-hemisphere-fire-pit",
+        "btn_link": "https:\/\/ashandemberoutdoors.com\/collections\/cyber-monday-doorbusters",
         "button_color_scheme": "none"
       }
     },
@@ -134,8 +125,8 @@
         "aspect_width": 0,
         "aspect_height": 0,
         "show_time": false,
-        "img": "shopify://shop_images/Ash_Ember_Long_Lasting_Products_for_Long_Lasting_Memories_Desktop.webp",
-        "img_mobile": "shopify://shop_images/Ash_Ember_Long_Lasting_Products_for_Long_Lasting_Memories_Mobile.webp",
+        "img": "shopify:\/\/shop_images\/Ash_Ember_Long_Lasting_Products_for_Long_Lasting_Memories_Desktop.webp",
+        "img_mobile": "shopify:\/\/shop_images\/Ash_Ember_Long_Lasting_Products_for_Long_Lasting_Memories_Mobile.webp",
         "video_overlay_opacity": 30,
         "color_scheme": "",
         "subheading": "",
@@ -143,7 +134,7 @@
         "heading_tag": "h2",
         "description": "We provide access to premium outdoor products at an affordable price that allows everyone to unplug, return to the outdoors and spend quality time together. That way, we all can live a more balanced life, create memories with friends and families and improve our overall wellbeing.",
         "main_cta_label": "Shop Now",
-        "main_cta_link": "shopify://collections/weekly-deals",
+        "main_cta_link": "shopify:\/\/collections\/weekly-deals",
         "main_button_color_scheme": "c-btnPrimary"
       }
     },
@@ -153,28 +144,28 @@
         "content_fxFynL": {
           "type": "content",
           "settings": {
-            "image": "shopify://shop_images/ash_and_ember_simplified_luxury_aef9d62c-8921-480e-a4e4-a57218bf860c.png",
+            "image": "shopify:\/\/shop_images\/ash_and_ember_simplified_luxury_aef9d62c-8921-480e-a4e4-a57218bf860c.png",
             "heading": "Simplified Luxury",
             "heading_tag": "h3",
-            "description": "<p>Through a combination of premium quality products, affordable prices, and superior customer service, our commitment to our customers results in simplified luxury — giving you room to relax, breathe, and focus on enjoying time outdoors.</p>"
+            "description": "<p>Through a combination of premium quality products, affordable prices, and superior customer service, our commitment to our customers results in simplified luxury — giving you room to relax, breathe, and focus on enjoying time outdoors.<\/p>"
           }
         },
         "content_RWdcwT": {
           "type": "content",
           "settings": {
-            "image": "shopify://shop_images/ash_and_ember_lasting_memories_ef6cbff2-4ab8-48c7-a1b4-135c1d8ed215.png",
+            "image": "shopify:\/\/shop_images\/ash_and_ember_lasting_memories_ef6cbff2-4ab8-48c7-a1b4-135c1d8ed215.png",
             "heading": "Lasting Memories",
             "heading_tag": "h3",
-            "description": "<p>We make long-lasting products for long-lasting memories. A real high-quality purchase made today will stand the test of time so that your family can pass it down for generations to come.</p>"
+            "description": "<p>We make long-lasting products for long-lasting memories. A real high-quality purchase made today will stand the test of time so that your family can pass it down for generations to come.<\/p>"
           }
         },
         "content_fmVbk9": {
           "type": "content",
           "settings": {
-            "image": "shopify://shop_images/ash_and_ember_stylized_spaces_63141c76-183c-4938-8fdd-fa8a3ce7e64c.png",
+            "image": "shopify:\/\/shop_images\/ash_and_ember_stylized_spaces_63141c76-183c-4938-8fdd-fa8a3ce7e64c.png",
             "heading": "Stylized Spaces",
             "heading_tag": "h3",
-            "description": "<p>Your home is a reflection of you — completely unique in every way possible. To reflect your individual tastes and desires, we provide a wide range of products designed to fit the space you need, how you need it. </p>"
+            "description": "<p>Your home is a reflection of you — completely unique in every way possible. To reflect your individual tastes and desires, we provide a wide range of products designed to fit the space you need, how you need it. <\/p>"
           }
         }
       },
@@ -200,8 +191,8 @@
     "dd33fb8f-f355-409c-91d6-2e380aab6af7": {
       "type": "img-banner",
       "settings": {
-        "img": "shopify://shop_images/Chiminea-Featured-Product.webp",
-        "img_mobile": "shopify://shop_images/Chiminea-Featured-Product-mobile.webp",
+        "img": "shopify:\/\/shop_images\/Chiminea-Featured-Product.webp",
+        "img_mobile": "shopify:\/\/shop_images\/Chiminea-Featured-Product-mobile.webp",
         "img_width": "large",
         "img_position": "right",
         "image_overlay_opacity": 30,
@@ -214,7 +205,7 @@
         "allignment_mobile": "u-middleCenter",
         "text_color": "#ffffff",
         "cta_label": "Shop Now",
-        "cta_link": "shopify://products/ceramic-chiminea",
+        "cta_link": "shopify:\/\/products\/ceramic-chiminea",
         "button_color_scheme": "c-btnPrimary"
       }
     },
@@ -250,7 +241,7 @@
           "type": "testimonial",
           "settings": {
             "brand_name": "Total Fitness USA",
-            "testimonial": "<p>We wanted the best-in-class brand that could withstand the impact of intense training and tolerate the extreme environment of our races — the high quality and toughness of Titan is just what we needed.</p>",
+            "testimonial": "<p>We wanted the best-in-class brand that could withstand the impact of intense training and tolerate the extreme environment of our races — the high quality and toughness of Titan is just what we needed.<\/p>",
             "author_name": "- Joe De Sena, Founder & CEO, Spartan"
           }
         },
@@ -258,7 +249,7 @@
           "type": "testimonial",
           "settings": {
             "brand_name": "Total Fitness USA",
-            "testimonial": "<p>We chose Titan because their equipment is really top-of-the-line, functionally great, and it had the look and professional feel that we want to convey at RFK Racing.</p>",
+            "testimonial": "<p>We chose Titan because their equipment is really top-of-the-line, functionally great, and it had the look and professional feel that we want to convey at RFK Racing.<\/p>",
             "author_name": "- Brad Keslowski, RFK Racing"
           }
         },
@@ -266,15 +257,15 @@
           "type": "testimonial",
           "settings": {
             "brand_name": "Total Fitness USA",
-            "testimonial": "<p>Thanks to Titan and their impressive equipment, we are able to grant some of the most transformational wishes: those that strengthen the body, while also strengthening the soul.</p>",
-            "author_name": "– Kim Elenez, President/CEO of Make-A-Wish North Texas"
+            "testimonial": "<p>Thanks to Titan and their impressive equipment, we are able to grant some of the most transformational wishes: those that strengthen the body, while also strengthening the soul.<\/p>",
+            "author_name": "– Kim Elenez, President\/CEO of Make-A-Wish North Texas"
           }
         },
         "df4d644d-2e55-43cb-a26a-532450caa322": {
           "type": "testimonial",
           "settings": {
             "brand_name": "Total Fitness USA",
-            "testimonial": "<p>Fitness is top priority for us. Even though firefighters are notorious for being hard on equipment, Titan products can stand up to the intensity of our training.</p>",
+            "testimonial": "<p>Fitness is top priority for us. Even though firefighters are notorious for being hard on equipment, Titan products can stand up to the intensity of our training.<\/p>",
             "author_name": "- Kevin Timmons, Bluff City Combat"
           }
         },
@@ -282,7 +273,7 @@
           "type": "testimonial",
           "settings": {
             "brand_name": "Total Fitness USA",
-            "testimonial": "<p>We’re able to get top notch equipment into more hands and no longer fear that quality equipment will out price many of our customers. If we want it, Titan has it.</p>",
+            "testimonial": "<p>We’re able to get top notch equipment into more hands and no longer fear that quality equipment will out price many of our customers. If we want it, Titan has it.<\/p>",
             "author_name": "- Andrew Lewis, Owner Total Fitness USA"
           }
         },
@@ -290,7 +281,7 @@
           "type": "testimonial",
           "settings": {
             "brand_name": "Total Fitness USA",
-            "testimonial": "<p>Titan made it possible to outfit our team gym with quality equipment, that will elevate our game, making it a space we’re proud to call ours.</p>",
+            "testimonial": "<p>Titan made it possible to outfit our team gym with quality equipment, that will elevate our game, making it a space we’re proud to call ours.<\/p>",
             "author_name": "- Brendon Cleave, Arrow McLaren Indycar Team"
           }
         }
@@ -309,7 +300,7 @@
         "heading": "What people are saying",
         "heading_tag": "h3",
         "reviews_count": "Over 9,686 5-Star Reviews",
-        "reviews_link": "shopify://pages/reviews",
+        "reviews_link": "shopify:\/\/pages\/reviews",
         "color_scheme": "background-2",
         "padding_top": 48,
         "padding_bottom": 48,
@@ -321,7 +312,7 @@
       "type": "instagram-carousel",
       "blocks": {
         "d55e8779-cffe-43eb-bc65-20439d39af0a": {
-          "type": "shopify://apps/reviews-io/blocks/reviewsio-ugc/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "type": "shopify:\/\/apps\/reviews-io\/blocks\/reviewsio-ugc\/92a082e5-b297-4e88-b428-ac96cbc505f9",
           "settings": {
             "widget_id": "Sx4BChsvJ6Ai5kOq",
             "is_product_specific": false,
@@ -337,7 +328,7 @@
       "settings": {
         "heading": "#UnleashYourTitan",
         "heading_tag": "h2",
-        "description": "<p>Mention us @betitanfit for a chance to be featured</p>",
+        "description": "<p>Mention us @betitanfit for a chance to be featured<\/p>",
         "color_scheme": "background-1",
         "padding_top": 48,
         "padding_bottom": 8,
